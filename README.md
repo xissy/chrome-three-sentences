@@ -1,9 +1,9 @@
 # chrome-three-sentences
 > A google chrome extension to summarize a TLDR webpage to just three sentences.
 
-Do you want to know whether a post is valable to read or not? Just wish to **see summarized essential sentences** about a page? Don't worry about it more. 3-Sentences can help you definetely.
+Do you want to know whether a post is valuable to read or not? Just wish to **see summarized essential sentences** about a page? Don't worry about it more. 3-Sentences can help you definitely.
 
-3-Sentences supports any languages on the planet so you don't need to worry about charset or encoding.
+3-Sentences supports any languages on the planet so you don't need to struggle with broken charsets or encoding.
 
 
 ## Demo
@@ -12,13 +12,13 @@ Do you want to know whether a post is valable to read or not? Just wish to **see
 
 ## Installation
   * Download `three-sentences.crx` file from [here](https://github.com/xissy/chrome-three-sentences/releases/download/v0.1.0/three-sentences.crx).
-  * Drag & drop the file into your google chrome browser extentions page.
-    - Link to the extentions page - [chrome://extensions/](chrome://extensions/)
+  * Drag & drop the file into your google chrome browser extensions page.
+    - Link to the extensions page - [chrome://extensions/](chrome://extensions/)
   * Done.
 
 
 ## What I've used to build this
-I've tried to follow de facto standard guidelines to build a chrome extension as a web-app. Want to be helpful to you guys.
+I've tried to follow de facto standard guidelines to build a chrome extension as a web-app.
 
   * Grunt
   * Bower
