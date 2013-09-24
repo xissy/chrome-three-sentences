@@ -1,0 +1,30 @@
+!!! 5
+html(data-ng-app, data-ng-csp)
+  head
+    meta(charset='utf-8')
+    // build:css /dist/styles/style.usemin.css
+    link(href='../bower_components/bootstrap/dist/css/bootstrap.css', media='screen', rel='stylesheet', type='text/css')
+    link(href='../bower_components/font-awesome/css/font-awesome.css', rel='stylesheet', type='text/css')
+    link(href='../styles/style.css', rel='stylesheet', type='text/css')
+    // endbuild
+
+  body(ng-controller='SummaryController')
+    .container
+      .row
+        //- h4 {{title}}
+        h4.app_title 3-Sentences
+      .row(ng-show='isLoading')
+        .loading 
+          i.icon-spinner.icon-spin.icon-large
+          |  Loading...
+      .row(ng-hide='isLoading')
+        ul#summarizedSentences
+          li.sentence(ng-repeat='sentence in summarizedSentences') {{sentence}}
+
+    // build:js /dist/scripts/script.usemin.js
+    script(src='../bower_components/jquery/jquery.js')
+    script(src='../bower_components/bootstrap/dist/js/bootstrap.js')
+    script(src='../bower_components/angular/angular.js')
+    script(src='../bower_components/angular-resource/angular-resource.js')
+    script(src='../scripts/popup.js')
+    // endbuild
