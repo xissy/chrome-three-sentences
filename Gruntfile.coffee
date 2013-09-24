@@ -113,12 +113,12 @@ module.exports = (grunt) ->
     useminPrepare:
       html: [ 'dist/views/**/*.html' ]
       options:
-        dest: './'
+        dest: 'dist/'
 
     usemin:
       html: [ 'dist/views/**/*.html' ]
       options:
-        dirs: [ './' ]
+        dirs: [ 'dist/' ]
 
     uglify:
       dist:
@@ -203,6 +203,12 @@ module.exports = (grunt) ->
       ]
       all: [ 'dist/' ]
 
+    crx:
+      dist:
+        src: 'dist/'
+        dest: 'crx/three-sentences.crx'
+        privateKey: 'cert/chrome-three-sentences.pem'
+
 
   grunt.registerTask 'default', [
     'build'
@@ -239,4 +245,9 @@ module.exports = (grunt) ->
     'clean:dev_scripts'
     'clean:dev_styles'
     'clean:dev_bower'
+  ]
+
+  grunt.registerTask 'build:crx', [
+    'build:dist'
+    'crx'
   ]

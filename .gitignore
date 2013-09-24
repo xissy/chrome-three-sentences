@@ -23,3 +23,6 @@ config.json
 
 dist
 src/bower_components
+
+cert
+crx
