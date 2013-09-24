@@ -27,20 +27,37 @@ threeSentencesApp.controller 'SummaryController', [
           callback null, response.summarizedSentences
       ,
         'json'
+      .fail (err) ->
+        console.log err
+        callback err
+
+
+    # show error message
+    showError = (message) ->
+      $scope.$apply ->
+        $scope.isLoading = false
+        $scope.isError = true
+        $scope.errorMessage = message
 
 
     # started by checking whether it has a frameset(s) or not.
     chrome.tabs.executeScript null,
       file: '/scripts/hasFrameset.js'
+    , ->
+      if chrome.extension.lastError
+        showError chrome.extension.lastError.message
 
 
     $scope.isLoading = true
+    $scope.isError = false
 
     # chrome extension message handler.
     chrome.extension.onMessage.addListener (request, sender) ->
       switch request.action
         when 'getSource'
           summarize request.source, (err, summarizedSentences) ->
+            showError err.responseText  if err?
+
             $scope.$apply ->
               $scope.title = sender.tab.title
               $scope.summarizedSentences = summarizedSentences
@@ -59,13 +76,19 @@ threeSentencesApp.controller 'SummaryController', [
                 htmlArray.sort (a, b) -> b.length - a.length
 
                 summarize htmlArray[0], (err, summarizedSentences) ->
+                  showError err.responseText  if err?
+
                   $scope.$apply ->
                     $scope.title = sender.tab.title
                     $scope.summarizedSentences = summarizedSentences
                     $scope.isLoading = false
+
           else
             chrome.tabs.executeScript null,
               file: '/scripts/getPagesSource.js'
+            , ->
+              if chrome.extension.lastError
+                showError chrome.extension.lastError.message
 
 ]
 
