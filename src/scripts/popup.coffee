@@ -31,7 +31,7 @@ threeSentencesApp.controller 'SummaryController', [
 
     # started by checking whether it has a frameset(s) or not.
     chrome.tabs.executeScript null,
-      file: '/dist/scripts/hasFrameset.js'
+      file: '/scripts/hasFrameset.js'
 
 
     $scope.isLoading = true
@@ -65,7 +65,7 @@ threeSentencesApp.controller 'SummaryController', [
                     $scope.isLoading = false
           else
             chrome.tabs.executeScript null,
-              file: '/dist/scripts/getPagesSource.js'
+              file: '/scripts/getPagesSource.js'
 
 ]
 

@@ -5,14 +5,20 @@
   "description": "Summarize a TLDR webpage to three sentences.",
   "version": "0.1.0",
 
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+
   "browser_action": {
-    "default_icon": "dist/assets/icon.png",
-    "default_popup": "dist/views/popup.html"
+    "default_icon": "assets/icon.png",
+    "default_popup": "views/popup.html"
   },
 
   "background": {
     "scripts": [
-      "dist/scripts/eventPage.js"
+      "scripts/eventPage.js"
     ]
   },
 
@@ -22,7 +28,7 @@
         "<all_urls>"
       ],
       "js": [
-        "dist/scripts/getHtml.js"
+        "scripts/getHtml.js"
       ],
       "all_frames": true
     }
