@@ -39,7 +39,7 @@ I've tried to follow de facto standard guidelines to build a chrome extension as
 
 
 ## Issues
-If you have any problem or suggestion, please let me know. You can create a issue at the issues page, [here](https://github.com/xissy/chrome-three-sentences/issues).
+If you have any problem or suggestion, please let me know. You can create an issue at the issues page, [here](https://github.com/xissy/chrome-three-sentences/issues).
 
 
 ## License
