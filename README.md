@@ -1,5 +1,5 @@
 # chrome-three-sentences
-> A google chrome extension to summarize a TLDR webpage to just three sentences.
+> A google chrome extension to summarize a TL;DR webpage to just three sentences.
 
 Do you want to know whether a post is valuable to read or not? Just wish to **see summarized essential sentences** about a page? Don't worry about it more. 3-Sentences can help you definitely.
 
